@@ -22,7 +22,7 @@ jobs:
       - name: Sign in to AWS with OIDC (no stored keys)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ secret.AWS_ROLE_ARN }}
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: ${{ vars.AWS_REGION }}
 
       - name: Upload HTML (always revalidated)
