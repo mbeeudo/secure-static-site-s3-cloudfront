@@ -1,0 +1,15 @@
+# Content-Security-Policy values for the CloudFront response headers policy.
+# Use the one that matches the site in site/.
+
+# Light (MU) portfolio, the one in site/ by default
+default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests
+
+# Dark (cloud) portfolio, with Font Awesome icons and live link previews
+default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://api.rss2json.com; frame-ancestors 'none'; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests
+
+# Other headers in the same policy:
+# Strict-Transport-Security: max-age=31536000; includeSubDomains
+# X-Content-Type-Options: nosniff
+# X-Frame-Options: DENY
+# Referrer-Policy: strict-origin-when-cross-origin
+# Permissions-Policy (custom header): camera=(), microphone=(), geolocation=()
